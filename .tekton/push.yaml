@@ -180,7 +180,7 @@ spec:
                 cd $(workspaces.source.path)
 
                 git config --global --add safe.directory /workspace/source
-                git checkout $(params.git-revision)
+                git checkout main
 
                 sed -i "s|\(image: \).*|\1$(params.image)|" $(params.file)
 
