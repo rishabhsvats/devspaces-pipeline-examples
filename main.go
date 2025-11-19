@@ -17,5 +17,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello World! from Rishabh! Check7 on new - from devspaces")
+	fmt.Fprint(w, "Hello World! from Rishabh! Check8 on new - from devspaces")
 }
