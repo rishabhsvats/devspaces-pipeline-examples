@@ -179,16 +179,17 @@ spec:
                 export HOME=$(workspaces.source.path)
                 cd $(workspaces.source.path)
 
+                ls -lart
                 git config --global --add safe.directory /workspace/source
                 git checkout main
-
+                # update container image in deployment manifest
                 sed -i "s|\(image: \).*|\1$(params.image)|" $(params.file)
 
                 git config user.email "rishabhsvats@gmail.com"
                 git config user.name "rishabhsvats"
                 git add $(params.file)
                 git commit -m "Update image to $(params.image)"
-                git push origin HEAD:$(params.git-revision)
+                git push origin HEAD:main
         params:
           - name: image
             value: $(params.image-url):$(params.image-tag)
