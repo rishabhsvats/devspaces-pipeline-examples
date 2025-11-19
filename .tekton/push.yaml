@@ -24,7 +24,7 @@ spec:
     - name: image-url
       value: docker.io/rishabh1234/simple-go
     - name: image-tag
-      value: "$(params.git-revision)"
+      value: $(params.git-revision)
     - name: deployment-file
       value: manifests/deployment.yaml
 
