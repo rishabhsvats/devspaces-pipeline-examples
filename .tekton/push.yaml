@@ -6,7 +6,7 @@ metadata:
     pipelinesascode.tekton.dev/on-event: "[push, pull_request]"
     pipelinesascode.tekton.dev/on-target-branch: "[main]"
     pipelinesascode.tekton.dev/max-keep-runs: "5"
-    pipelinesascode.tekton.dev/on-paths-ignore: |
+    pipelinesascode.tekton.dev/on-path-changed-ignore: |
       [
         "manifests/**"
         ".tekton/**"
@@ -48,7 +48,7 @@ spec:
         type: string
       - name: image-tag
         type: string
-        default: latest
+        default: "$(context.pipelineRun.annotations['pipelinesascode.tekton.dev/sha'])"
       - name: deployment-file
         type: string
         default: manifests/deployment.yaml
