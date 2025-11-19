@@ -192,7 +192,7 @@ spec:
                 git remote -v   
                 git checkout -b main
                 # update container image in deployment manifest
-                sed -i "s|\(image: \).*|\1$(params.image)|" $(params.file)
+                sed -i "s|\(image: \).*|\1$$(params.image-url):$(params.image-tag)|" $(params.file)
 
                 git config user.email "rishabhsvats@gmail.com"
                 git config user.name "rishabhsvats"
