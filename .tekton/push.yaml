@@ -24,7 +24,7 @@ spec:
     - name: image-url
       value: docker.io/rishabh1234/simple-go
     - name: image-tag
-      value: "$(context.pipelineRun.annotations['pipelinesascode.tekton.dev/sha'])"
+      value: $(context.pipelineRun.annotations['pipelinesascode.tekton.dev/sha'])
     - name: deployment-file
       value: manifests/deployment.yaml
 
