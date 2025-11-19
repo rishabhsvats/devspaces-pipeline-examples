@@ -184,7 +184,7 @@ spec:
                 git branch -a
                 git status
                 git remote -v   
-                git checkout main
+                git checkout -b main
                 # update container image in deployment manifest
                 sed -i "s|\(image: \).*|\1$(params.image)|" $(params.file)
 
@@ -192,7 +192,7 @@ spec:
                 git config user.name "rishabhsvats"
                 git add $(params.file)
                 git commit -m "Update image to $(params.image)"
-                git push origin HEAD:main
+                git push -u origin main
         params:
           - name: image
             value: $(params.image-url):$(params.image-tag)
