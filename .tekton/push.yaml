@@ -178,9 +178,14 @@ spec:
                 set -xe
                 export HOME=$(workspaces.source.path)
                 cd $(workspaces.source.path)
-
+                git branch -a
+                git status
+                git remote -v
                 ls -lart
                 git config --global --add safe.directory /workspace/source
+                git branch -a
+                git status
+                git remote -v   
                 git checkout main
                 # update container image in deployment manifest
                 sed -i "s|\(image: \).*|\1$(params.image)|" $(params.file)
