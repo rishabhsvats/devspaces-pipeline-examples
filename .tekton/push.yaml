@@ -193,8 +193,8 @@ spec:
                 git checkout -b main
                 # update container image in deployment manifest
                 old_image=`cat manifests/deployment.yaml | grep image | awk -F"image:" '{print $2}'`
-                new_image=`echo " $(params.image-url):$(params.git-revision)"`
-                sed -i "s#$old_image#$new_image#g" manifests/deployment.yaml
+                new_image=`echo $(params.image-url):$(params.git-revision)`
+                sed -i "s# $old_image# $new_image#g" manifests/deployment.yaml
 
                 git config user.email "rishabhsvats@gmail.com"
                 git config user.name "rishabhsvats"
