@@ -193,7 +193,8 @@ spec:
                 git checkout -b main
                 # update container image in deployment manifest
                 sed -i "s|\(image: \).*|\1$$(params.image-url):$(params.git-revision)|" $(params.file)
-
+                cat /workspace/source/.git-credentials
+                cat /tekton/home/.git-credentials
                 git config user.email "rishabhsvats@gmail.com"
                 git config user.name "rishabhsvats"
                 git add $(params.file)
