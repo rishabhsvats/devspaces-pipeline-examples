@@ -192,7 +192,7 @@ spec:
                 git remote -v   
                 git checkout -b main
                 # update container image in deployment manifest
-                old_image=`cat manifests/deployment.yaml | grep image | awk -F"image:" '{print $2}'`
+                old_image=`cat manifests/deployment.yaml | grep image | awk -F"image: " '{print $2}'`
                 new_image=`echo $(params.image-url):$(params.git-revision)`
                 sed -i "s# $old_image# $new_image#g" manifests/deployment.yaml
 
