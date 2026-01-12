@@ -2,9 +2,9 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: simple-go
-  namespace: test
+  namespace: pipeline-test
 spec:
-  host: test-simplego.apps.rishabhrdu.lab.upshift.rdu2.redhat.com
+  host: test-simplego.com
   to:
     kind: Service
     name: simple-go
