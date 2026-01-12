@@ -197,6 +197,7 @@ spec:
                 git config user.email "rishabhsvats@gmail.com"
                 git config user.name "rishabhsvats"
                 git add $(params.file)
+                cat manifests/deployment.yaml
                 git commit -m "Update image to $(params.image)"
                 git push -u origin main
         params:
