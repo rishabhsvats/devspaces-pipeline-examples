@@ -4,7 +4,6 @@ metadata:
   name: simple-go
   namespace: pipeline-test
 spec:
-  host: test-simplego.com
   to:
     kind: Service
     name: simple-go
