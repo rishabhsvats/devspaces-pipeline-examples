@@ -18,7 +18,7 @@ spec:
         app: simple-go
     spec:
       containers:
-      - image: docker.io/rishabh1234/simple-go:0753b19d35d8b61cf9b3f5a9bf333c27243cc54a
+      - image: docker.io/rishabh1234/simple-go:9a9a4165964bf5692f0d194379d7458f2c56da73
         name: simple-go
         resources: {}
 status: {}
